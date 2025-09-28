@@ -1,0 +1,421 @@
+/* Portfolio Section */
+.portfolio {
+  position: relative;
+  padding: 8rem 2rem;
+  min-height: 100vh;
+}
+
+.portfolioBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.backgroundAnimation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+  opacity: 0.7;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ec4899 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.titleDivider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ec4899 0%, #8b5cf6 100%);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.portfolioFilters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterButton:hover {
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.filterButton.active {
+  background: linear-gradient(90deg, #ec4899 0%, #8b5cf6 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+
+.portfolioItem {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.portfolioItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.portfolioItem.featured {
+  grid-column: span 2;
+}
+
+.portfolioImage {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolioItem:hover .image {
+  transform: scale(1.05);
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ec4899, #8b5cf6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e2e8f0;
+  font-size: 1.2rem;
+}
+
+.portfolioOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.portfolioItem:hover .portfolioOverlay {
+  opacity: 1;
+}
+
+.portfolioActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.actionButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #ec4899 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+  transform: scale(1.1);
+}
+
+.featuredBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.portfolioContent {
+  padding: 1.5rem;
+}
+
+.portfolioTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 0.5rem;
+}
+
+.portfolioDescription {
+  color: #94a3b8;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.portfolioCategory {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  margin-bottom: 6rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ctaTitle {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+}
+
+.ctaText {
+  color: #94a3b8;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButton {
+  background: linear-gradient(90deg, #ec4899 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+}
+
+.testimonialsSection {
+  margin-bottom: 4rem;
+}
+
+.testimonialsTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 3rem;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonialCard {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.testimonialContent {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.quoteIcon {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #ec4899 0%, #8b5cf6 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.testimonialText {
+  color: #94a3b8;
+  line-height: 1.7;
+  font-style: italic;
+  padding-left: 2rem;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.authorAvatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ec4899, #8b5cf6);
+  flex-shrink: 0;
+}
+
+.authorInfo h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 0.3rem;
+}
+
+.authorInfo p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .portfolioGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .portfolioItem.featured {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio {
+    padding: 6rem 1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+  
+  .portfolioFilters {
+    gap: 0.5rem;
+  }
+  
+  .filterButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .portfolioGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolioFilters {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filterButton {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .ctaTitle {
+    font-size: 1.8rem;
+  }
+  
+  .testimonialAuthor {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
