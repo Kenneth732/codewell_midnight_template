@@ -75,8 +75,8 @@ src/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/dr-codewell.git
-   cd dr-codewell
+   git clone https://github.com/Kenneth732/codewell_midnight_template.git
+   cd codewell_midnight_template
    ```
 
 2. **Install dependencies**
