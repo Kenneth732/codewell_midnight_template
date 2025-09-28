@@ -1,3 +1,5 @@
+
+
 import React from 'react'
 import HeroPage from './HeroPage'
 import AboutPage from './AboutPage'
@@ -16,3 +18,4 @@ const HomePage = () => {
 }
 
 export default HomePage
+
